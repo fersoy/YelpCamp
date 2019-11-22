@@ -1,12 +1,24 @@
 <% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">YelpCamp</p>
+            <div class="list-group">
+                <li class="list-group-item">First Column</li>
+                <li class="list-group-item">Second Column</li>
+                <li class="list-group-item">Third Column</li>
+            </div>
+        </div>
+    </div>
+</div>
+<h1><%= campground.name %></h1>
 
-<h1><%= Campground.name %></h1>
+<img src="<%= campground.image %>" alt="">
 
-<img src="<%= Campground.image %>" alt="">
+<p><%= campground.description %></p>
+<a class="btn btn-success" href="/campgrounds/ <%= campground._id %>/comment/new">Add a new comment</a>
 
-<p><%= Campground.description %></p>
-
-<% Campground.comments.forEach(comment => { %>
+<% campground.comments.forEach(comment => { %>
 <p>
     <strong><%= comment.author%></strong> - <%= comment.text %>
 </p>
